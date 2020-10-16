@@ -53,7 +53,7 @@ def main():
         url="https://github.com/colav/Hunahpu",
 
         #
-        license="MIT",
+        license="BSD",
 
         description="Similarity metrics for bibliography",
 
