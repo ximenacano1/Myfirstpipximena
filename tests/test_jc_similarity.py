@@ -5,8 +5,8 @@ from hunahpu.similarity import jc_similarity
 class TestJC_similarity(unittest.TestCase):
     def setUp(self):
         self.title1 = "Implementation of industrial technology to improve the manufacturing "
-        self.title1 = "process contoured seats [Implementación de la tecnología industrial "
-        self.title1 = "para el mejoramiento del proceso de fabricación de asientos conformados]"
+        self.title1 += "process contoured seats [Implementación de la tecnología industrial "
+        self.title1 += "para el mejoramiento del proceso de fabricación de asientos conformados]"
         self.title2 = "Implementation of industrial technology to improve the manufacturing process contoured seats"
         self.title3 = "Implementation of industrial technology to improve the manufacturing process contoured seats"
 
