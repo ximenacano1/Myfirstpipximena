@@ -53,7 +53,7 @@ def main():
         url="https://github.com/colav/Hunahpu",
 
         #
-        license="MIT",
+        license="BSD",
 
         description="Similarity metrics for bibliography",
 
@@ -63,7 +63,8 @@ def main():
 
         # Dependent packages (distributions)
         install_requires=[
-            'nltk==3.5'
+            'nltk==3.5',
+            'Unidecode==1.1.1'
         ],
     )
 
