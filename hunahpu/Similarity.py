@@ -9,7 +9,7 @@ import re
 
 def __parse_string(text):
     '''
-    This function allows to removed unneeded characters
+    This function allows to remove unneeded characters
 
     Parameters
     ----------
