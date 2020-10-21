@@ -64,10 +64,10 @@ def main():
         # Dependent packages (distributions)
         install_requires=[
             'nltk==3.5',
-            'Unidecode==1.1.1',
+            'Unidecode<=1.1.1',
             'fuzzywuzzy==0.18.0',
             'langid==1.1.6',
-            'translate==3.5.0',
+            'googletrans>=3.0.0',
         ],
     )
 
