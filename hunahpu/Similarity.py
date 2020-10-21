@@ -4,14 +4,12 @@ from fuzzywuzzy import fuzz, process
 from langid import classify
 from googletrans import Translator
 
-from pylatexenc.latex2text import LatexNodes2Text
 import re
-import sys
 
 
 def __parse_string(text):
     '''
-    This function allows to removed unneeded characters 
+    This function allows to removed unneeded characters
 
     Parameters
     ----------
@@ -37,16 +35,23 @@ def __jc_similarity_base(title1, title2, n=3):
     if unilen == 0 or lenmin == 0:
         S = 0
     else:
-        J = len(n1.intersection(n2))/unilen
-        C = len(n1.intersection(n2))/lenmin
-        if J+C != 0:
-            S = 2*J*C/(J+C)
+        J = len(n1.intersection(n2)) / unilen
+        C = len(n1.intersection(n2)) / lenmin
+        if J + C != 0:
+            S = 2 * J * C / (J + C)
         else:
             S = 0
     return S
 
 
-def JCSimilarity(title1, title2, n=3, boolean=False, threshold=0.8, use_translation=True, use_parsing=True):
+def JCSimilarity(
+        title1,
+        title2,
+        n=3,
+        boolean=False,
+        threshold=0.8,
+        use_translation=True,
+        use_parsing=True):
     '''
     Computes titles similarity according to section 2.6 of
     https://arxiv.org/pdf/1911.02782.pdf
@@ -108,11 +113,17 @@ def JCSimilarity(title1, title2, n=3, boolean=False, threshold=0.8, use_translat
         return S
 
 
-def __colav_similarity(paper1, paper2, ratio_thold=90, partial_thold=95, low_thold=80, use_translation=False, verbose=0):
+def __colav_similarity(
+        paper1,
+        paper2,
+        ratio_thold=90,
+        partial_thold=95,
+        low_thold=80,
+        use_translation=False,
+        verbose=0):
     '''
     Utility function to avoid code duplication, public implementation below.
     '''
-    #prtin("Journals are: ",journal1,journal2)
     label = False
 
     title1 = paper1['title']
@@ -131,7 +142,10 @@ def __colav_similarity(paper1, paper2, ratio_thold=90, partial_thold=95, low_tho
     # Se revisa si los años y las revistas coinciden
     journal_check = False
     if journal1 and journal2:
-        if fuzz.ratio(unidecode(journal1.lower()), unidecode(journal2.lower())) > ratio_thold:
+        if fuzz.ratio(
+            unidecode(
+                journal1.lower()), unidecode(
+                journal2.lower())) > ratio_thold:
             journal_check = True
     year_check = False
     if year1 and year2:
@@ -152,7 +166,8 @@ def __colav_similarity(paper1, paper2, ratio_thold=90, partial_thold=95, low_tho
         # Comparaciones cuando el título viene en varios idiomas
         title1_list = title1.split("[")
         title2_list = title2.split("[")
-        if min([len(item) for item in title1_list]) > 10 and min([len(item) for item in title2_list]) > 10:
+        if min([len(item) for item in title1_list]) > 10 and min(
+                [len(item) for item in title2_list]) > 10:
             for title in title1_list:
                 _, ratio = process.extractOne(
                     title, title2_list, scorer=fuzz.ratio)
@@ -161,7 +176,7 @@ def __colav_similarity(paper1, paper2, ratio_thold=90, partial_thold=95, low_tho
                     break
             if verbose == 5:
                 print("ratio over list: ", ratio)
-            if label == False:
+            if not label:
                 for title in title1_list:
                     _, ratio = process.extractOne(
                         title, title2_list, scorer=fuzz.partial_ratio)
@@ -176,13 +191,14 @@ def __colav_similarity(paper1, paper2, ratio_thold=90, partial_thold=95, low_tho
                     print("partial ratio over list: ", ratio)
 
     # Partial ratio section
-    if label == False:
+    if not label:
         # Cuando la comparación "directa" falla, relajamos el scorer
         ratio = fuzz.partial_ratio(title1, title2)
         if verbose == 5:
             print("partial ratio: ", ratio)
 
-        # si el score supera el umbral (que debería ser mayor al umbral del ratio)
+        # si el score supera el umbral (que debería ser mayor al umbral del
+        # ratio)
         if ratio > partial_thold:
             label = True
         elif ratio > low_thold:  # si no lo supera pero sigue siendo un valor alto, revisa el año y la revista
@@ -190,7 +206,7 @@ def __colav_similarity(paper1, paper2, ratio_thold=90, partial_thold=95, low_tho
                 label = True
 
     # Translation section
-    if label == False and use_translation:  # Si aún no define si coincide y si la traducción fue habilitada
+    if label is False and use_translation:  # Si aún no define si coincide y si la traducción fue habilitada
         lang1, _ = classify(title1)
         lang2, _ = classify(title2)
         if lang1 != "en" or lang2 != "en":  # también chequea si la traducción es necesaria
@@ -219,7 +235,7 @@ def __colav_similarity(paper1, paper2, ratio_thold=90, partial_thold=95, low_tho
             if ratio > ratio_thold:
                 label = True
                 print("IT WORKED WITH THAT AWFUL TRANSLATION")
-            if label == False:  # si aún así no lo detectó, se intenta finalmente con el partial
+            if label is False:  # si aún así no lo detectó, se intenta finalmente con el partial
                 ratio = fuzz.partial_ratio(title1, title2)
                 if verbose == 5:
                     print("partial ratio over translation: ", ratio)
@@ -234,7 +250,14 @@ def __colav_similarity(paper1, paper2, ratio_thold=90, partial_thold=95, low_tho
     return label
 
 
-def ColavSimilarity(paper1, paper2, ratio_thold=96, partial_thold=98, low_thold=76, use_translation=False, use_parsing=True):
+def ColavSimilarity(
+        paper1,
+        paper2,
+        ratio_thold=96,
+        partial_thold=98,
+        low_thold=76,
+        use_translation=False,
+        use_parsing=True):
     '''
     custom metric for similarity using multiple nested metrics from fuzzywuzzy
 
@@ -247,7 +270,7 @@ def ColavSimilarity(paper1, paper2, ratio_thold=96, partial_thold=98, low_thold=
     ratio_thold: int
         threshold for  ratio matric
     partial_thold: int
-        threshold for partial ratio 
+        threshold for partial ratio
     low_thold: int
         low threshold for ratios
     use_translation : str
@@ -260,10 +283,20 @@ def ColavSimilarity(paper1, paper2, ratio_thold=96, partial_thold=98, low_thold=
 
     if not use_parsing:
         label = __colav_similarity(
-            paper1, paper2, ratio_thold, partial_thold, low_thold, use_translation)
+            paper1,
+            paper2,
+            ratio_thold,
+            partial_thold,
+            low_thold,
+            use_translation)
     elif use_parsing:
         paper1['title'] = __parse_string(paper1['title'])
         paper2['title'] = __parse_string(paper2['title'])
         label = __colav_similarity(
-            paper1, paper2, ratio_thold, partial_thold, low_thold, use_translation)
+            paper1,
+            paper2,
+            ratio_thold,
+            partial_thold,
+            low_thold,
+            use_translation)
     return label
