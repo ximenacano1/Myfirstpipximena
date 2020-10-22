@@ -138,8 +138,7 @@ def __colav_similarity(
         year1 = int(year1)
     if year2:
         year2 = int(year2)
-
-    # Se revisa si los años y las revistas coinciden
+        
     journal_check = False
     if journal1 and journal2:
         if fuzz.ratio(
@@ -160,10 +159,9 @@ def __colav_similarity(
     ratio = fuzz.ratio(title1, title2)
     if verbose == 5:
         print("Initial ratio: ", ratio)
-    if ratio > ratio_thold:  # Comparación "directa"
+    if ratio > ratio_thold: 
         label = True
-    else:  # Se podría repetir esto en la sección traducida
-        # Comparaciones cuando el título viene en varios idiomas
+    else:
         title1_list = title1.split("[")
         title2_list = title2.split("[")
         if min([len(item) for item in title1_list]) > 10 and min(
@@ -192,24 +190,23 @@ def __colav_similarity(
 
     # Partial ratio section
     if not label:
-        # Cuando la comparación "directa" falla, relajamos el scorer
+        
         ratio = fuzz.partial_ratio(title1, title2)
         if verbose == 5:
             print("partial ratio: ", ratio)
 
-        # si el score supera el umbral (que debería ser mayor al umbral del
-        # ratio)
+        
         if ratio > partial_thold:
             label = True
-        elif ratio > low_thold:  # si no lo supera pero sigue siendo un valor alto, revisa el año y la revista
+        elif ratio > low_thold:  
             if journal_check and year_check:
                 label = True
 
     # Translation section
-    if label is False and use_translation:  # Si aún no define si coincide y si la traducción fue habilitada
+    if label is False and use_translation:  
         lang1, _ = classify(title1)
         lang2, _ = classify(title2)
-        if lang1 != "en" or lang2 != "en":  # también chequea si la traducción es necesaria
+        if lang1 != "en" or lang2 != "en":  
             if lang1 != "en":
                 translator = Translator()
                 try:
@@ -228,24 +225,21 @@ def __colav_similarity(
                 if verbose == 5:
                     print("Title 2 translated to ", title2)
 
-            # Revisa primero si sólo basta con la comparación "directa"
+           
             ratio = fuzz.ratio(title1, title2)
             if verbose == 5:
                 print("Ratio over translation: ", ratio)
             if ratio > ratio_thold:
                 label = True
-                print("IT WORKED WITH THAT AWFUL TRANSLATION")
-            if label is False:  # si aún así no lo detectó, se intenta finalmente con el partial
+            if label is False: 
                 ratio = fuzz.partial_ratio(title1, title2)
                 if verbose == 5:
                     print("partial ratio over translation: ", ratio)
-                if ratio > partial_thold:  # Si supera el umbral de partial que es mayor al del ratio
+                if ratio > partial_thold:  
                     label = True
-                    print("IT WORKED WITH THAT AWFUL TRANSLATION")
-                elif ratio > low_thold:  # sino lo supera pero está en un intervalo dudoso, revisa el año y la revista
+                elif ratio > low_thold:  
                     if journal_check and year_check:
                         label = True
-                        print("IT WORKED WITH THAT AWFUL TRANSLATION")
 
     return label
 
