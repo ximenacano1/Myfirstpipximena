@@ -1,2 +1,2 @@
 # flake8: noqa
-from hunahpu import Similarity
+from anomaly import anomaly
