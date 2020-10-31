@@ -34,14 +34,14 @@ if os.name in ('nt', 'dos'):
 def main():
     setup(
         # Application name:
-        name="Hunahpu",
+        name="anomaly",
 
         # Version number (initial):
-        version="0.0.2-alpha",
+        version="0.0.1-alpha",
 
         # Application author details:
-        author="Colav",
-        author_email="grupocolav@udea.edu.co",
+        author="restrepo",
+        author_email="restrepo@udea.edu.co",
 
         # Packages
         packages=find_packages(exclude=['tests']),
@@ -50,12 +50,12 @@ def main():
         include_package_data=True,
 
         # Details
-        url="https://github.com/colav/Hunahpu",
+        url="https://github.com/restrepo/anomaly",
 
         #
         license="BSD",
 
-        description="Similarity metrics for bibliography",
+        description="Anomaly cancellation",
 
         long_description=open("README.md").read(),
 
@@ -63,11 +63,7 @@ def main():
 
         # Dependent packages (distributions)
         install_requires=[
-            'nltk==3.5',
-            'Unidecode<=1.1.1',
-            'fuzzywuzzy==0.18.0',
-            'langid==1.1.6',
-            'googletrans>=3.0.0',
+            'numpy'
         ],
     )
 
