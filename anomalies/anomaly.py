@@ -23,3 +23,5 @@ def z(l,k,sort=True,reverse=True):
     if sort:
         zz=sorted( zz ,key=abs, reverse=reverse ) 
     return np.array(zz)
+
+free=z
