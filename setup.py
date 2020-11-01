@@ -34,7 +34,7 @@ if os.name in ('nt', 'dos'):
 def main():
     setup(
         # Application name:
-        name="anomaly",
+        name="anomalies",
 
         # Version number (initial):
         version="0.0.1-alpha",
