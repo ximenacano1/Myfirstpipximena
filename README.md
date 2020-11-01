@@ -1,5 +1,5 @@
 # Anomalies
-Implement the anomaly free solution or  arXiv:1905.13729
+Implement the anomaly free solution of  [arXiv:1905.13729](https://arxiv.org/abs/1905.13729)
 
 ## Install
 ```bash
