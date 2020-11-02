@@ -1,4 +1,5 @@
 import unittest
+import numpy as np
 from anomalies import anomaly
 class TestColav_anomaly(unittest.TestCase):
     def test__working(self):
