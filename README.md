@@ -9,4 +9,9 @@ $ pip install anomalies
 ```python
 >>> from anomalies import anomaly
 >>> anomaly.free([-1,1],[4,-2])
+array([  3,   3,   3, -12, -12,  15])
+>>> free.gcd
+3
+>>> free.simplified
+array([ 1,  1,  1, -4, -4,  5])
 ```
