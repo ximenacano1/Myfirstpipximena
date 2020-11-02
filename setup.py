@@ -37,7 +37,7 @@ def main():
         name="anomalies",
 
         # Version number (initial):
-        version="0.0.2-alpha",
+        version="0.1.0",
 
         # Application author details:
         author="restrepo",
