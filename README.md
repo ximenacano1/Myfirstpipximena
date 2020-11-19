@@ -2,7 +2,7 @@
 Implement the anomaly free solution of  [arXiv:1905.13729](https://arxiv.org/abs/1905.13729) [PRL]:
 
 A set of integers $n_i$ ($i=1,2,\ldots,N$) satisfying the Diophantine equations
-![img](htps://raw.githubusercontent.com/restrepo/anomalies/main/img/eq.png)
+![img](https://raw.githubusercontent.com/restrepo/anomalies/main/img/eq.png)
 can be parametrized as a function of two sets of integers $l$ and $k$, with dimensions $(N-3)/2$ and $(N-1)/2$ for $N$ odd, or $N/2-1$ and $N/2-1$ for $N$ even. 
 The function is implemented below under the name: `free(l,k)`
 
