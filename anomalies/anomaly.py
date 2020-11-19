@@ -24,8 +24,8 @@ def _z(l,k,sort=True,reverse=False):
     k=list(k)
     #Build vector-like solutions x,y
     if len(l)==len(k) :
-        x=np.array( [l[0]]+k+[-l[0]]+[-i for i in k ])
-        y=np.array( [0,0] +l        +[-i for i in l ])
+        x=np.array( [l[0]]+k+[-l[0]]+[-i for i in k ] )
+        y=np.array( [0,0] +l        +[-i for i in l ] )
     else:
         x=np.array( [0]+k+[-i for i in k ] )
         y=np.array( l+[k[0]]+[0]+[-i for i in l ]+[-k[0]])
