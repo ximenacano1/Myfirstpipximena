@@ -8,7 +8,7 @@ Obtain a numpy array `z` of `N` integers which satisfy the Diophantine equations
 >>> (z**3).sum()
 0
 ```
-The input is two lists `l` and `k` with of any `(N-3)/2` and `(N-1)/2` for `N` odd, or `N/2-1` and `N/2-1` for `N` even (`N>4`).
+The input is two lists `l` and `k` with any `(N-3)/2` and `(N-1)/2` integers for `N` odd, or `N/2-1` and `N/2-1` for `N` even (`N>4`).
 The function is implemented below under the name: `free(l,k)`
 
 ## Install
