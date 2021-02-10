@@ -37,7 +37,7 @@ def main():
         name="anomalies",
 
         # Version number (initial):
-        version="0.1.9",
+        version="0.2.0",
 
         # Application author details:
         author="restrepo",
@@ -64,8 +64,8 @@ def main():
         # Dependent packages (distributions)
         # See: https://github.com/pypa/pipenv/issues/2171
         install_requires=[
-            'numpy==1.16.2; python_version>="3.6"',
-            'numpy>=1.16.2; python_version>"3.6"',
+            'numpy==1.16.2; python_version=="3.6"',
+            'numpy>=1.16.2; python_version>="3.7"',
         ],
     )
 
