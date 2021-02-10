@@ -37,7 +37,7 @@ def main():
         name="anomalies",
 
         # Version number (initial):
-        version="0.1.7",
+        version="0.1.8",
 
         # Application author details:
         author="restrepo",
@@ -63,7 +63,7 @@ def main():
 
         # Dependent packages (distributions)
         install_requires=[
-            'numpy==1.16.2'
+            'numpy>=1.16.2'
         ],
     )
 
