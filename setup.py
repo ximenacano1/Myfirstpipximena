@@ -37,7 +37,7 @@ def main():
         name="anomalies",
 
         # Version number (initial):
-        version="0.1.4",
+        version="0.1.5",
 
         # Application author details:
         author="restrepo",
@@ -50,7 +50,7 @@ def main():
         include_package_data=True,
 
         # Details
-        url="https://github.com/restrepo/anomaly",
+        url="https://github.com/restrepo/anomalies",
 
         #
         license="BSD",
