@@ -44,7 +44,7 @@ class cfree(object):
     * `simplified`: solution with gcd=1 
     '''
     def __call__(self,l,k,sort=True,reverse=False):
-        zz=_z(l,k,sort=True,reverse=False)
+        zz=_z(l,k,sort=sort,reverse=reverse)
         self.gcd=np.gcd.reduce(zz)
         self.simplified=(zz/self.gcd).astype(int)
         return zz
