@@ -63,7 +63,8 @@ def main():
 
         # Dependent packages (distributions)
         install_requires=[
-            'numpy>=1.16.2'
+            'numpy==1.16.2; python_version>=="3.6"',
+            'numpy>=1.16.2; python_version>"3.6"',
         ],
     )
 
