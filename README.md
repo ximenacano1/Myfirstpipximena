@@ -1,4 +1,8 @@
 # Anomalies
+
+![Upload Python Package](https://github.com/restrepo/anomalies/workflows/Upload%20Python%20Package/badge.svg)
+![Python package](https://github.com/restrepo/anomalies/workflows/Python%20package/badge.svg)
+
 Implement the anomaly free solution of  [arXiv:1905.13729](https://arxiv.org/abs/1905.13729) [PRL]:
 
 Obtain a numpy array `z` of `N` integers which satisfy the Diophantine equations
