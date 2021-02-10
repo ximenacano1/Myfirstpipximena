@@ -1,7 +1,7 @@
 import numpy as np
 #!/usr/bin/env python3
 '''
-Implementation arXiv:1905.13729:
+Implementation of arXiv:1905.13729:
 
 A set of $N$  $n_\alpha$ integers that satisfy Diophantine 
 equations
