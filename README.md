@@ -32,4 +32,4 @@ array([ 1,  1,  1, -4, -4,  5])
 ```
 
 ## Example
-A sample for `5<N<12` with integers until `|30|` with `~400 000` chiral solutions can be download from [here](https://github.com/restrepo/anomaly/raw/main/solutions.json.gz) [JSON]
+A sample for `4<N<13` with integers until `|30|` with `~400 000` chiral solutions can be download from [here](https://github.com/restrepo/anomaly/raw/main/solutions.json.gz) [JSON]
