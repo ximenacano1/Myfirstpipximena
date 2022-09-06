@@ -16,4 +16,8 @@ $ pip install DevOps
 >>> hello
 Hello World!
 ```
-
+Links:
+* https://test.pypi.org/
+* https://peps.python.org/pep-0008/
+* https://docs.pytest.org/en/7.1.x/
+* https://help.github.com/en/actions/language-and-framework-guides/using-python-with-github-actions
