@@ -34,10 +34,10 @@ if os.name in ('nt', 'dos'):
 def main():
     setup(
         # Application name:
-        name="anomalies",
+        name="hello",
 
         # Version number (initial):
-        version="0.2.4",
+        version="0.0.1",
 
         # Application author details:
         author="restrepo",
@@ -55,7 +55,7 @@ def main():
         #
         license="BSD",
 
-        description="Anomaly cancellation",
+        description="Hello World!",
 
         long_description=open("README.md").read(),
 
