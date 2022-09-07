@@ -9,11 +9,12 @@ Print `Hello World!`
 
 ## Install
 ```bash
-$ pip install DevOps
+$ pip install desoper
 ```
 ## USAGE
 ```python
->>> hello
+>>> from desoper import hello
+>>> hello.hello()
 Hello World!
 ```
 Links:

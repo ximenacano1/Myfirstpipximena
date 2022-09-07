@@ -34,7 +34,7 @@ if os.name in ('nt', 'dos'):
 def main():
     setup(
         # Application name:
-        name="hello",
+        name="desoper",
 
         # Version number (initial):
         version="0.0.1",
@@ -50,9 +50,8 @@ def main():
         include_package_data=True,
 
         # Details
-        url="https://github.com/restrepo/anomalies",
+        url="https://github.com/restrepo/DevOps",
 
-        #
         license="BSD",
 
         description="Hello World!",
