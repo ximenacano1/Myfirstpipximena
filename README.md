@@ -1,11 +1,9 @@
-# Hello World
+# Template for GitHub actions for DevOps
 
 ![Python package](https://github.com/restrepo/DevOps/workflows/Python%20package/badge.svg)
 ![Upload Python Package](https://github.com/restrepo/DevOps/workflows/Upload%20Python%20Package/badge.svg)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5526558.svg)](https://doi.org/10.5281/zenodo.5526558)
 
-Print `Hello World!`
-
+The related software just print `Hello World!`. To avoid conflicts with the package name, we use the Spanish translation _DesOper_
 
 ## Install
 ```bash
