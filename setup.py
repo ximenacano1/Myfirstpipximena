@@ -63,10 +63,7 @@ def main():
 
         # Dependent packages (distributions)
         # See: https://github.com/pypa/pipenv/issues/2171
-        install_requires=[
-            'numpy==1.16.2; python_version=="3.6"',
-            'numpy>=1.16.2; python_version>="3.7"',
-        ],
+        # install_requires=[],
     )
 
 
