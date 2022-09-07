@@ -7,7 +7,7 @@ The related software just print `Hello World!`. To avoid conflicts with the pack
 
 ## Install
 ```bash
-$ pip install desoper
+$ pip install -i https://test.pypi.org/simple/ desoper
 ```
 ## USAGE
 ```python
@@ -16,7 +16,9 @@ $ pip install desoper
 Hello World!
 ```
 Links:
-* https://test.pypi.org/
-* https://peps.python.org/pep-0008/
-* https://docs.pytest.org/en/7.1.x/
-* https://help.github.com/en/actions/language-and-framework-guides/using-python-with-github-actions
+* [Test pip page](https://test.pypi.org/project/desoper/)
+* Flake8 Tool For Style Guide Enforcement
+  * https://flake8.pycqa.org/ 
+  * https://peps.python.org/pep-0008/
+* [Test python code](https://docs.pytest.org/en/7.1.x/)
+* [GitHub actions](https://help.github.com/en/actions/language-and-framework-guides/using-python-with-github-actions)
