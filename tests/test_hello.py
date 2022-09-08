@@ -4,7 +4,7 @@ from desoper import hello_myfisrstpip
 
 class Test_hello(unittest.TestCase):
     def test__working(self):
-        self.assertEqual(hello.hello(),
+        self.assertEqual(hello_myfirstpip.hello(),
                          'Hello, World!', True)
 
 
