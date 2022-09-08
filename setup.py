@@ -34,14 +34,14 @@ if os.name in ('nt', 'dos'):
 def main():
     setup(
         # Application name:
-        name="desoper",
+        name="Myfirstpipximena",
 
         # Version number (initial):
         version="0.0.3",
 
         # Application author details:
-        author="restrepo",
-        author_email="restrepo@udea.edu.co",
+        author="ximenacano1",
+        author_email="ximena.cano@udea.edu.co",
 
         # Packages
         packages=find_packages(exclude=['tests']),
@@ -50,7 +50,7 @@ def main():
         include_package_data=True,
 
         # Details
-        url="https://github.com/restrepo/DevOps",
+        url="https://github.com/ximenacano1/Myfirstpipximena",
 
         license="BSD",
 
