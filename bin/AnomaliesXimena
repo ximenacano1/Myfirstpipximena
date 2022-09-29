@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+
+from AnomaliesXimena import Anomalies
+import argparse
+
+# Se crea el parser
+parser = argparse.ArgumentParser(
+    description="Solucion para anomalies DESCRIPCION"
+)
+
+# add n argument
+parser.add_argument("n", type=int, help="Numero de elementos del arreglo solucion esperado")
+
+# add N argument
+parser.add_argument(
+    "--zmax",
+    type=int,
+    required=False,
+    action="store",
+    help="Valor maximo para los elementos del arreglo solucion. Valor por defecto zmax=30",
+)
+
+# add N argument
+parser.add_argument(
+    "--N",
+    type=int,
+    required=False,
+    action="store",
+    help="Numero de iteraciones para encontrar el total de soluciones. Valor por defecto N=5000",
+)
+
+args = parser.parse_args()
