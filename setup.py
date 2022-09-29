@@ -41,7 +41,7 @@ def main():
 
         # Application author details:
         author="ximenacano1",
-        author_email="ximena.cano@udea.edu.co",
+        author_email="ximena.441@gmail.co",
 
         # Packages
         packages=find_packages(exclude=['tests']),
@@ -51,6 +51,7 @@ def main():
 
         # Details
         url="https://github.com/ximenacano1/Myfirstpipximena",
+        scripts=['bin/AnomaliesXimena'],
 
         license="BSD",
 
