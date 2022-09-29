@@ -1,7 +1,7 @@
 # Template for GitHub actions for DevOps
 
-![Python package](https://github.com/restrepo/DevOps/workflows/Python%20package/badge.svg)
-![Upload Python Package](https://github.com/restrepo/DevOps/workflows/Upload%20Python%20Package/badge.svg)
+![Python package](https://github.com/ximenacano1/Myfirstpipximena/workflows/Python%20package/badge.svg)
+![Upload Python Package](https://github.com/ximenacano1/Myfirstpipximena/workflows/Upload%20Python%20Package/badge.svg)
 
 The related software just print `Hello World!`. To avoid conflicts with the package name, we use the Spanish translation _DesOper_
 
@@ -9,12 +9,14 @@ The related software just print `Hello World!`. To avoid conflicts with the pack
 ```bash
 $ pip install -i https://test.pypi.org/simple/ desoper
 ```
+
+
 ## USAGE
-```python
->>> from desoper import hello
->>> hello.hello()
-Hello World!
+```bash
+$ AnomaliesXimena 5
 ```
+
+
 Links:
 * [Test pip page](https://test.pypi.org/project/desoper/)
 * Flake8 Tool For Style Guide Enforcement

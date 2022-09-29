@@ -55,7 +55,7 @@ def main():
 
         license="BSD",
 
-        description="Hello World!",
+        description="Solucion para el problema de las anomalias. Se siguen los procedimientos descritos por Costa, Dobrescu, Bogdan & Fox (2019).",
 
         long_description=open("README.md").read(),
 

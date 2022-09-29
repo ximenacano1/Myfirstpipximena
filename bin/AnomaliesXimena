@@ -5,7 +5,7 @@ import argparse
 
 # Se crea el parser
 parser = argparse.ArgumentParser(
-    description="Solucion para anomalies DESCRIPCION"
+    description="Solucion para el problema de las anomalias. Se siguen los procedimientos descritos por Costa, Dobrescu, Bogdan & Fox (2019)."
 )
 
 # add n argument
