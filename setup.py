@@ -37,7 +37,7 @@ def main():
         name="Myfirstpipximena",
 
         # Version number (initial):
-        version="0.0.1",
+        version="0.0.2",
 
         # Application author details:
         author="ximenacano1",
